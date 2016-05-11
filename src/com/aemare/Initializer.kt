@@ -9,6 +9,7 @@ import com.aemare.enumeration.Type
  * @description Initializes constants for the logger, this class is optional. (Uses default constants)
  */
 class Initializer {
+
     /**
      * Initializes the script with the following options:
      * Logger Name (Kaiwan => My Awesome Logger),

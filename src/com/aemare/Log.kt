@@ -14,8 +14,25 @@ import java.util.*
  * @description Handles all the actions that need to be performed when logging.
  */
 class Log {
+
     /**
-     * Performs the log action.
+     * Performs the original log action.
+     */
+    constructor(s: String) {
+        val t: Type = Type.ORG
+        var n = ""
+        when (Constants.FORMAT) {
+            Format.FULL,
+            Format.DET -> n = t.n
+            Format.MIN -> n = t.name
+        }
+        val text = "${Constants.LOGGER_NAME} on ${getDate()} : (${n.toUpperCase()}) $s"
+        println(t.clr+text)
+        if (Constants.ALLOW_STORE) write(text)
+    }
+
+    /**
+     * Performs the log action with a custom Type.
      */
     constructor(t: Type, s: String) {
         var n = ""
